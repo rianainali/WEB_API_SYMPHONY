@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrator{% endblock %}
+
+{% block body %}
+    <h1>Administrator</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ administrator.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ administrator.name }}</td>
+            </tr>
+            <tr>
+                <th>Job</th>
+                <td>{{ administrator.job }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_index') }}"><button type="button" class="btn btn-primary"> back to list</button></a>
+    <a href="{{ path('app_admin_edit', {'id': administrator.id}) }}"><button type="button" class="btn btn-primary">edit</button></a>
+
+    {{ include('admin/_delete_form.html.twig') }}
+{% endblock %}
